@@ -38,6 +38,6 @@ btnFecharModal.addEventListener('click', function() {
     // Esconde a popup novamente
     modal.classList.add('hidden');
     
-    // Reseta todos os campos do formulário para uma nova avaliação
+    // Reseta todos os campos do formulário para uma nova avaliação de candidato
     vagaForm.reset();
 });

@@ -210,7 +210,7 @@ button:active {
     text-shadow: 0 0 8px rgba(0, 223, 216, 0.2);
 }
 
-/* Erro: Um Rosa/Magenta Choque que conversa perfeitamente com a paleta roxa */
+/* Erro: Um Rosa/Magenta Choque que conversa de maneira perfeita com a paleta roxa */
 .erro {
     background: rgba(ff, 0, 128, 0.08);
     color: #ff3399;
