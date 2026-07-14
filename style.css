@@ -1,0 +1,301 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Fundo escuro profundo com gradiente radial puxando para o roxo da meia-noite */
+    background: radial-gradient(circle at 50% 50%, #0f0c20 0%, #050409 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Elementos decorativos em formato de "orbes de luz" para dar o efeito de transparência real */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 0;
+    opacity: 0.18;
+}
+
+body::before {
+    width: 350px;
+    height: 350px;
+    background: #7928ca; /* Roxo vibrante de fundo */
+    top: 10%;
+    left: 15%;
+}
+
+body::after {
+    width: 300px;
+    height: 300px;
+    background: #00dfd8; /* Azul ciano neon de fundo */
+    bottom: 10%;
+    right: 15%;
+}
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL (Glassmorphism Roxo/Transparente)
+   ========================================================================== */
+.container {
+    position: relative;
+    z-index: 1;
+    background: rgba(20, 16, 38, 0.5); /* Efeito areal translúcido escuro */
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.07); /* Reflexo linear de vidro */
+    padding: 40px 30px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 420px;
+    /* Sombras orgânicas e reflexo neon difuso */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(121, 40, 202, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7),
+                0 0 50px rgba(0, 223, 216, 0.08);
+}
+
+/* ==========================================================================
+   TIPOGRAFIA (Efeito de Brilho Sutil)
+   ========================================================================== */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    /* Leve neon azulado no título */
+    text-shadow: 0 0 15px rgba(0, 223, 216, 0.35);
+}
+
+/* ==========================================================================
+   FORMULÁRIO E INPUTS
+   ========================================================================== */
+.form-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #a49fc2;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* ==========================================================================
+   FORMULÁRIO E INPUTS (FUNDO BRANCO COM TRANSIÇÃO SUAVE DE BORDAS)
+   ========================================================================== */
+.form-group {
+    margin-bottom: 22px;
+}
+
+/* ==========================================================================
+   ROTULOS (LABELS) EM BRANCO PARA ALTO DESTAQUE
+   ========================================================================== */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff; /* Alterado para branco puro */
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    /* Fundo em tom branco puro */
+    background: #ffffff;
+    /* Borda inicial sutil que já puxa levemente para a paleta do tema */
+    border: 1.5px solid rgba(121, 40, 202, 0.15);
+    border-radius: 12px;
+    font-size: 15px;
+    color: #1a153a;
+    outline: none;
+    
+    /* Transição ultra suave e sincronizada para a borda e o brilho (box-shadow) */
+    transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.4s ease;
+}
+
+input::placeholder {
+    color: #a49fc2;
+}
+
+/* Estado de Foco (quando o usuário clica para digitar) */
+input:focus {
+    background: #ffffff;
+    /* A borda muda suavemente para o Roxo principal */
+    border-color: #7928ca;
+    /* Efeito de halo/neon que mistura o Roxo e o Azul Ciano do restante do tema */
+    box-shadow: 0 0 0 4px rgba(121, 40, 202, 0.12),
+                0 4px 15px rgba(0, 223, 216, 0.1);
+}
+
+/* ==========================================================================
+   BOTÃO (Gradiente Roxo para Azul & Brilho Ativo)
+   ========================================================================== */
+button {
+    width: 100%;
+    padding: 16px;
+    /* Transição suave de Roxo para Azul Ciano */
+    background: linear-gradient(135deg, #7928ca 0%, #00dfd8 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(121, 40, 202, 0.35);
+}
+
+button:hover {
+    transform: translateY(-1px);
+    /* Intensifica o neon azul/roxo no hover */
+    box-shadow: 0 6px 25px rgba(0, 223, 216, 0.4),
+                0 0 15px rgba(121, 40, 202, 0.2);
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(121, 40, 202, 0.3);
+}
+
+/* ==========================================================================
+   MENSAGENS DE RESULTADO (Adaptadas ao tema Roxo/Cyber)
+   ========================================================================== */
+#resultado {
+    margin-top: 25px;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.5;
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Sucesso: Neon Ciano / Azul Piscina */
+.sucesso {
+    background: rgba(0, 223, 216, 0.08);
+    color: #00dfd8;
+    border: 1px solid rgba(0, 223, 216, 0.25);
+    box-shadow: 0 0 15px rgba(0, 223, 216, 0.05);
+    text-shadow: 0 0 8px rgba(0, 223, 216, 0.2);
+}
+
+/* Erro: Um Rosa/Magenta Choque que conversa perfeitamente com a paleta roxa */
+.erro {
+    background: rgba(ff, 0, 128, 0.08);
+    color: #ff3399;
+    border: 1px solid rgba(255, 51, 153, 0.25);
+    box-shadow: 0 0 15px rgba(255, 51, 153, 0.05);
+    text-shadow: 0 0 8px rgba(255, 51, 153, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================================================
+   ESTILOS ADICIONAIS PARA A POPUP (Mantendo a identidade visual existente)
+   ========================================================================== */
+
+/* Fundo escurecido atrás da popup */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Caixa interna da popup (Design Glassmorphism combinando com o container) */
+.modal-content {
+    background: rgba(25, 20, 45, 0.85);
+    backdrop-filter: blur(25px) saturate(150%);
+    -webkit-backdrop-filter: blur(25px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 35px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 
+                0 0 50px rgba(121, 40, 202, 0.15);
+    text-align: center;
+    animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Espaçamento do botão interno da popup */
+.modal-content button {
+    margin-top: 25px;
+}
+
+/* Sobrescreve a margem superior do resultado dentro da modal */
+.modal-content #resultado {
+    margin-top: 0;
+}
+
+/* Animação de escala para a popup abrir elegantemente */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   CORREÇÃO: REGRA PARA ESCONDER A POPUP DA TELA INICIAL
+   ========================================================================== */
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Vaga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Validação de Candidatura</h2>
+        <form id="vagaForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required placeholder="Digite seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" required min="0" placeholder="Ex: 25">
+            </div>
+
+            <div class="form-group">
+                <label for="altura">Altura (em metros):</label>
+                <input type="number" id="altura" step="0.01" required min="0" placeholder="Ex: 1.75">
+            </div>
+
+            <button type="submit">Verificar Elegibilidade</button>
+        </form>
+    </div>
+
+    <div id="customModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div id="resultado"></div>
+            <button id="btnFecharModal">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
