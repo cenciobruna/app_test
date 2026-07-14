@@ -8,9 +8,12 @@
     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* ==========================================================================
+   CONFIGURAÇÃO DO FUNDO - LILÁS CLARO COM DEGRADÊ SUAVE
+   ========================================================================== */
 body {
-    /* Fundo escuro profundo com gradiente radial puxando para o roxo da meia-noite */
-    background: radial-gradient(circle at 50% 50%, #0f0c20 0%, #050409 100%);
+    /* Fundo em tom de lilás claro moderno e limpo */
+    background: radial-gradient(circle at 50% 50%, #f3ebf9 0%, #e3d3f2 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,20 +23,20 @@ body {
     position: relative;
 }
 
-/* Elementos decorativos em formato de "orbes de luz" para dar o efeito de transparência real */
+/* Ajuste dos orbes decorativos para combinarem perfeitamente com o fundo claro */
 body::before, body::after {
     content: '';
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px);
+    filter: blur(100px);
     z-index: 0;
-    opacity: 0.18;
+    opacity: 0.4; /* Sombra de luz suave e colorida */
 }
 
 body::before {
     width: 350px;
     height: 350px;
-    background: #7928ca; /* Roxo vibrante de fundo */
+    background: #b19ffb; /* Roxo/lilás médio */
     top: 10%;
     left: 15%;
 }
@@ -41,7 +44,7 @@ body::before {
 body::after {
     width: 300px;
     height: 300px;
-    background: #00dfd8; /* Azul ciano neon de fundo */
+    background: #8ec5fc; /* Azul celeste pastel */
     bottom: 10%;
     right: 15%;
 }
